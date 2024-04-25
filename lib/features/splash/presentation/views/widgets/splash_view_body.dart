@@ -1,4 +1,4 @@
-import 'package:bookly/core/asses_app.dart';
+import 'package:bookly/core/assets_app.dart';
 import 'package:flutter/material.dart';
 
 class SplashViewBody extends StatelessWidget {
