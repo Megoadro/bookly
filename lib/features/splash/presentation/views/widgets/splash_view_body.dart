@@ -1,4 +1,6 @@
 import 'package:bookly/core/assets_app.dart';
+import 'package:bookly/features/splash/presentation/views/widgets/sliding_text.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -25,10 +27,13 @@ class _SplashViewBodyState extends State<SplashViewBody>
     slidingAnimation =
         Tween<Offset>(begin: const Offset(0, 5), end: const Offset(0, 0))
             .animate(animationController);
-            animationController.forward();
-    slidingAnimation.addListener(() {
-      setState(() {});
-    });
+    animationController.forward();
+  }
+
+  @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
   }
 
   @override
@@ -41,14 +46,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
           Image.asset(
             AssetsData.logo,
           ),
-          SlideTransition(
-            position: slidingAnimation,
-            child: const Text(
-              'Read books free...!',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 25),
-            ),
-          ),
+          SlidingText(slidingAnimation: slidingAnimation),
         ],
       ),
     );
