@@ -1,3 +1,4 @@
+import 'package:bookly/constant.dart';
 import 'package:bookly/core/styles.dart';
 import 'package:bookly/features/home/peresentation/views/widgets/book_list_view.dart';
 import 'package:bookly/features/home/peresentation/views/widgets/custom_app_bar.dart';
@@ -21,10 +22,13 @@ class HomeViewBody extends StatelessWidget {
           Text(
             'Best Seller',
             style: Styles.titleMeduim,
-            
           ),
         ],
       ),
     );
   }
 }
+//For Use Anther FontFamily From Const
+          // .copyWith(
+          //     fontFamily: kLugrasimoFont,
+          //   ),
