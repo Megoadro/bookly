@@ -1,5 +1,7 @@
 import 'package:bookly/core/styles.dart';
+import 'package:bookly/features/home/peresentation/views/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BestSellerDesc extends StatelessWidget {
@@ -18,9 +20,12 @@ class BestSellerDesc extends StatelessWidget {
                 overflow: TextOverflow.ellipsis,
                 style: Styles.textStyle18),
           ),
-          Text(
-            'J.K Rowiling',
-            style: Styles.textStyle16.copyWith(color: Colors.grey),
+          const Opacity(
+            opacity: .7,
+            child: Text(
+              'J.K Rowiling',
+              style: Styles.textStyle16,
+            ),
           ),
           Row(
             children: [
@@ -30,31 +35,7 @@ class BestSellerDesc extends StatelessWidget {
                     Styles.textStyle118.copyWith(fontWeight: FontWeight.bold),
               ),
               const Spacer(),
-              Row(
-                children: [
-                  const Icon(
-                    FontAwesomeIcons.solidStar,
-                    color: Colors.amber,
-                    size: 18,
-                  ),
-                  const SizedBox(
-                    width: 8,
-                  ),
-                  Text(
-                    '4.8',
-                    style: Styles.textStyle16
-                        .copyWith(fontWeight: FontWeight.bold),
-                  ),
-                  const SizedBox(
-                    width: 8,
-                  ),
-                  Text(
-                    '(2330)',
-                    style: Styles.textStyle16.copyWith(
-                        fontWeight: FontWeight.bold, color: Colors.grey),
-                  ),
-                ],
-              )
+             const BookRating(),
             ],
           ),
         ],
