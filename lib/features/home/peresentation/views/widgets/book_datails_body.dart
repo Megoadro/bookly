@@ -1,6 +1,7 @@
 import 'package:bookly/core/styles.dart';
 import 'package:bookly/features/home/peresentation/views/widgets/best_seller_image.dart';
 import 'package:bookly/features/home/peresentation/views/widgets/book_details_custom_app_bar.dart';
+import 'package:bookly/features/home/peresentation/views/widgets/book_details_list_view.dart';
 import 'package:bookly/features/home/peresentation/views/widgets/book_price_check.dart';
 import 'package:bookly/features/home/peresentation/views/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
@@ -57,7 +58,11 @@ class BookDetailsBody extends StatelessWidget {
               'You can also like',
               style: Styles.textStyle118.copyWith(fontWeight: FontWeight.w900),
             ),
-          )
+          ),
+          const SizedBox(
+            height: 18,
+          ),
+          const BookDetailsListView(),
         ],
       ),
     );

@@ -1,13 +1,13 @@
 import 'package:bookly/features/home/peresentation/views/widgets/book_item.dart';
 import 'package:flutter/material.dart';
 
-class BookListView extends StatelessWidget {
-  const BookListView({super.key});
+class BookDetailsListView extends StatelessWidget {
+  const BookDetailsListView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * .28,
+      height: MediaQuery.of(context).size.height * .17,
       child: ListView.builder(
           physics: const BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
