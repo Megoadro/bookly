@@ -4,6 +4,7 @@ import 'package:bookly/features/home/peresentation/views/widgets/book_details_cu
 import 'package:bookly/features/home/peresentation/views/widgets/book_price_check.dart';
 import 'package:bookly/features/home/peresentation/views/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class BookDetailsBody extends StatelessWidget {
   const BookDetailsBody({super.key});
@@ -24,7 +25,7 @@ class BookDetailsBody extends StatelessWidget {
             child: const BestSellerImage(),
           ),
           const SizedBox(
-            height: 40,
+            height: 20,
           ),
           const Text(
             'The Jungle Book',
@@ -33,11 +34,9 @@ class BookDetailsBody extends StatelessWidget {
           const SizedBox(
             height: 5,
           ),
-           Text(
+          Text(
             'Rudyard Kipling',
-            style: Styles.textStyle16.copyWith(
-              fontStyle: FontStyle.italic
-            ),
+            style: Styles.textStyle16.copyWith(fontStyle: FontStyle.italic),
           ),
           const SizedBox(
             height: 8,
@@ -49,6 +48,16 @@ class BookDetailsBody extends StatelessWidget {
             height: 22,
           ),
           const BookPriceCheck(),
+          const SizedBox(
+            height: 18,
+          ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              'You can also like',
+              style: Styles.textStyle118.copyWith(fontWeight: FontWeight.w900),
+            ),
+          )
         ],
       ),
     );
