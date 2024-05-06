@@ -1,4 +1,4 @@
-import 'package:bookly/core/router.dart';
+import 'package:bookly/core/utils/router.dart';
 import 'package:bookly/features/home/peresentation/views/widgets/best_seller_desc.dart';
 import 'package:bookly/features/home/peresentation/views/widgets/best_seller_image.dart';
 import 'package:flutter/cupertino.dart';

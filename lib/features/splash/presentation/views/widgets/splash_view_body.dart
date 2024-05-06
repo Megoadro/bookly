@@ -1,5 +1,5 @@
-import 'package:bookly/core/assets_app.dart';
-import 'package:bookly/core/router.dart';
+import 'package:bookly/core/utils/assets_app.dart';
+import 'package:bookly/core/utils/router.dart';
 import 'package:bookly/features/splash/presentation/views/widgets/sliding_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

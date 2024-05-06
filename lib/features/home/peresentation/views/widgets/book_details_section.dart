@@ -1,4 +1,4 @@
-import 'package:bookly/core/styles.dart';
+import 'package:bookly/core/utils/styles.dart';
 import 'package:bookly/features/home/peresentation/views/widgets/best_seller_image.dart';
 import 'package:bookly/features/home/peresentation/views/widgets/book_price_check.dart';
 import 'package:bookly/features/home/peresentation/views/widgets/book_rating.dart';
