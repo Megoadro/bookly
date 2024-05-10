@@ -17,11 +17,14 @@ class SerchViewBody extends StatelessWidget {
             height: 40,
           ),
           CustomTextField(),
-           SizedBox(height: 20,),
-           Expanded(child: SearchResults(),),
+          SizedBox(
+            height: 20,
+          ),
+          Expanded(
+            child: SearchResults(),
+          ),
         ],
       ),
     );
   }
 }
-

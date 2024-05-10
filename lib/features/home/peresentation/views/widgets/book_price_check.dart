@@ -23,7 +23,7 @@ class BookPriceCheck extends StatelessWidget {
               ),
             ),
           ),
-           Expanded(
+          Expanded(
             child: BookTextButton(
               text: 'Free preview',
               textColor: Colors.white,

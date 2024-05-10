@@ -4,8 +4,9 @@ import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BookRating extends StatelessWidget {
-  const BookRating({super.key, this.mainAxisAlignment = MainAxisAlignment.start});
-   final MainAxisAlignment mainAxisAlignment;
+  const BookRating(
+      {super.key, this.mainAxisAlignment = MainAxisAlignment.start});
+  final MainAxisAlignment mainAxisAlignment;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -30,8 +31,9 @@ class BookRating extends StatelessWidget {
           opacity: .7,
           child: Text(
             '(2330)',
-            style: Styles.textStyle16
-                .copyWith(fontWeight: FontWeight.bold,),
+            style: Styles.textStyle16.copyWith(
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ],

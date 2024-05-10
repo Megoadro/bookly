@@ -40,7 +40,6 @@ class BookDetailsSection extends StatelessWidget {
           height: 22,
         ),
         const BookPriceCheck(),
-        
       ],
     );
   }

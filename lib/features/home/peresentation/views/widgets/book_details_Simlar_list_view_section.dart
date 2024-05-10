@@ -12,16 +12,15 @@ class BookDetailsSimilarListViewSection extends StatelessWidget {
       children: [
         Text(
           'You can also like',
-          style: Styles.textStyle118
-              .copyWith(fontWeight: FontWeight.w900),
+          style: Styles.textStyle118.copyWith(fontWeight: FontWeight.w900),
         ),
-                const SizedBox(
-                  height: 10,
-                ),
-                const BookDetailsListView(),
-                const SizedBox(
-                  height: 10,
-                ),
+        const SizedBox(
+          height: 10,
+        ),
+        const BookDetailsListView(),
+        const SizedBox(
+          height: 10,
+        ),
       ],
     );
   }

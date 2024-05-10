@@ -34,7 +34,7 @@ class BestSellerDesc extends StatelessWidget {
                     Styles.textStyle118.copyWith(fontWeight: FontWeight.bold),
               ),
               const Spacer(),
-             const BookRating(),
+              const BookRating(),
             ],
           ),
         ],
