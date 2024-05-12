@@ -10,30 +10,40 @@ class ServerFailuer extends Failuer {
 
   factory ServerFailuer.fromDioErro(DioException dioException) {
     switch (dioException.type) {
+      //1
       case DioExceptionType.connectionTimeout:
         return ServerFailuer('Connectin timeout with api server');
+      //2
       case DioExceptionType.sendTimeout:
         return ServerFailuer('Send timeout with api server');
+      //3  
       case DioExceptionType.receiveTimeout:
         return ServerFailuer('Receive timeout with api server');
+      //4  
       case DioExceptionType.badCertificate:
         return ServerFailuer('Incorrect crtificate with api server');
+      //5--->Second Factory
       case DioExceptionType.badResponse:
         return ServerFailuer.fromBadResponse(
           dioException.response!.statusCode!,
           dioException.response!.data,
         );
+      //6  
       case DioExceptionType.cancel:
         return ServerFailuer('Request to Api Server Was Cancel');
+      //7  
       case DioExceptionType.connectionError:
         if (dioException.message!.contains('SocketExceptions')) {
           return ServerFailuer('No Internet Conection');
         }
+      //8 
       case DioExceptionType.unknown:
         return ServerFailuer('Unexpected Error .. Please Try later !');
+      //9  
       default:
         return ServerFailuer('OOPS! There was an error .. pleasw try again');
     }
+    //10
     return ServerFailuer('Unexpected Error .. Please Try later !');
   }
 
