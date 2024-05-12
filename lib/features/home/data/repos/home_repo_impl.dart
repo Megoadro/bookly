@@ -9,14 +9,19 @@ class HomeRepoImpls implements HomeRepo {
   HomeRepoImpls(this.apiService);
   @override
   Future<Either<Failuer, List<BookModel>>> fetchBestSellerData() async {
-    var data = await apiService.get(
-        endPoint:
-            'volumes?Filtering=free-ebooks&q=subject:programming&Sorting=newest');
-    List<BookModel> books = [];
+    try {
+  var data = await apiService.get(
+      endPoint:
+          'volumes?Filtering=free-ebooks&q=subject:programming&Sorting=newest');
+            List<BookModel> books = [];
     for (var item in data['item']) {
       books.add(BookModel.fromJson(item));
     }
     return right(books);
+}  catch (e) {
+  return Left(ServerFailuer());
+}
+  
   }
 
   @override
