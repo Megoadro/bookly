@@ -5,5 +5,5 @@ import 'package:dartz/dartz.dart';
 abstract class HomeRepo {
   //All Methods There Witthout Impls(Yes Thats abs class) .. Only Describe Name And Type Of  Methods
   Future<Either<Failuer, List<BookModel>>> fetchBookItemData();
-  Future<Either<Failuer, List<BookModel>>> fetchBestSellerData();
+  Future<Either<Failuer, List<BookModel>>> fetchNewestData();
 }
