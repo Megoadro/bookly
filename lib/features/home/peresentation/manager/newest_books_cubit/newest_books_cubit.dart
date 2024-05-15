@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class NewestBooksCubit extends Cubit<NewestBooskStates> {
   NewestBooksCubit(this.homeRepo) : super(NewestBooskInitialState());
-  HomeRepo homeRepo;
+  final HomeRepo homeRepo;
   Future<void> fetchNewestResult() async {
     emit(NewestBooskLoadingState());
     var dataResult = await homeRepo.fetchNewestData();

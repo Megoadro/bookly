@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class BookItemCubit extends Cubit<BookItemStates> {
   BookItemCubit(this.homeRepo) : super(BookItemInitialState());
-  HomeRepo homeRepo;
+  final HomeRepo homeRepo;
   Future<void> fetchBookItemResult() async {
     emit(BookItemLoadingState());
     var dataResult = await homeRepo.fetchBookItemData();
