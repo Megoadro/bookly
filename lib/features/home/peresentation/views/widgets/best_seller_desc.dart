@@ -30,17 +30,7 @@ class BestSellerDesc extends StatelessWidget {
               style: Styles.textStyle16,
             ),
           ),
-          Row(
-            children: [
-              Text(
-                'Free',
-                style:
-                    Styles.textStyle118.copyWith(fontWeight: FontWeight.bold),
-              ),
-              const Spacer(),
-              const BookRating(),
-            ],
-          ),
+          
         ],
       ),
     );

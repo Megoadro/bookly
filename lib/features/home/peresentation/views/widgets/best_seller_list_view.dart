@@ -1,6 +1,5 @@
 import 'package:bookly/core/widgets/custom_error_messege.dart';
 import 'package:bookly/core/widgets/custom_indecator.dart';
-import 'package:bookly/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly/features/home/peresentation/manager/newest_books_cubit/newest_books_cubit.dart';
 import 'package:bookly/features/home/peresentation/manager/newest_books_cubit/newest_books_states.dart';
 import 'package:bookly/features/home/peresentation/views/widgets/best_seller_item.dart';
