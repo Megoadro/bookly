@@ -12,7 +12,7 @@ class SearchResults extends StatelessWidget {
           padding: EdgeInsets.zero,
           itemCount: 10,
           itemBuilder: (context, index) {
-            return const BestSellerItem();
+            return const Center(child: Text('Zekooo'));
           }),
     );
   }

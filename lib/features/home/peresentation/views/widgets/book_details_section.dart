@@ -14,7 +14,10 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .14),
-          child: const BestSellerImage(),
+          child: const BestSellerImage(
+            imageUrl:
+                'https://marketplace.canva.com/EAFaQMYuZbo/1/0/1003w/canva-brown-rusty-mystery-novel-book-cover-hG1QhA7BiBU.jpg',
+          ),
         ),
         const SizedBox(
           height: 20,
