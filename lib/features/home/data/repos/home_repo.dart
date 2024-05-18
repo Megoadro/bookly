@@ -6,4 +6,6 @@ abstract class HomeRepo {
   //All Methods There Witthout Impls(Yes Thats abs class) .. Only Describe Name And Type Of  Methods
   Future<Either<Failuer, List<BookModel>>> fetchBookItemData();
   Future<Either<Failuer, List<BookModel>>> fetchNewestData();
+  Future<Either<Failuer, List<BookModel>>> fetchSimilartData(
+      {required String category});
 }
