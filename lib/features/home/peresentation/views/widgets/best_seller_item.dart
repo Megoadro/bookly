@@ -8,15 +8,19 @@ import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 
 class BestSellerItem extends StatelessWidget {
-  const BestSellerItem({super.key, required this.bookModel,});
-   final BookModel bookModel;
+  const BestSellerItem({
+    super.key,
+    required this.bookModel,
+  });
+  final BookModel bookModel;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         GoRouter.of(context).push(AppRouters.kBookDetailsView);
       },
-      child:  SizedBox(
+      child: SizedBox(
         height: 125,
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 10),
@@ -25,10 +29,14 @@ class BestSellerItem extends StatelessWidget {
               BestSellerImage(
                 imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? '',
               ),
-             const SizedBox(
+              const SizedBox(
                 width: 15,
               ),
-              BestSellerDesc(),
+              BestSellerDesc(
+                title: bookModel.volumeInfo.title!,
+                authName: bookModel.volumeInfo.authors![0],
+
+              ),
             ],
           ),
         ),

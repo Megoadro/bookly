@@ -1,4 +1,3 @@
-import 'package:bookly/core/utils/assets_app.dart';
 import 'package:flutter/material.dart';
 
 class BestSellerImage extends StatelessWidget {

@@ -4,7 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class BestSellerDesc extends StatelessWidget {
-  const BestSellerDesc({super.key});
+  const BestSellerDesc({
+    super.key, required this.title, required this.authName,
+  });
+  final String title;
+  final String authName;
 
   @override
   Widget build(BuildContext context) {
@@ -14,22 +18,22 @@ class BestSellerDesc extends StatelessWidget {
         children: [
           SizedBox(
             width: MediaQuery.of(context).size.width * .5,
-            child: const Text('Harry Potter and The Goblet of Fire',
+            child:  Text(title,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: Styles.textStyle18),
           ),
-          const Opacity(
+           Opacity(
             opacity: .7,
             child: Text(
-              'J.K Rowiling',
+              authName,
               style: Styles.textStyle16,
             ),
           ),
           Row(
             children: [
               Text(
-                '19.99€',
+                'Free',
                 style:
                     Styles.textStyle118.copyWith(fontWeight: FontWeight.bold),
               ),
