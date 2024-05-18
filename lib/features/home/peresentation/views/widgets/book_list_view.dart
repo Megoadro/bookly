@@ -21,7 +21,7 @@ class BookListView extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 itemCount: state.books.length,
                 itemBuilder: (context, index) {
-                  return const BookItem();
+                  return  BookItem(imageUrl: state.books[index].volumeInfo.imageLinks?.thumbnail ?? '',);
                 }),
           );
         } else if (state is BookItemFailureState) {

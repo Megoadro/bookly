@@ -13,7 +13,10 @@ class BookDetailsListView extends StatelessWidget {
           scrollDirection: Axis.horizontal,
           itemCount: 10,
           itemBuilder: (context, index) {
-            return const BookItem();
+            return const BookItem(
+              imageUrl:
+                  'https://marketplace.canva.com/EAFaQMYuZbo/1/0/1003w/canva-brown-rusty-mystery-novel-book-cover-hG1QhA7BiBU.jpg',
+            );
           }),
     );
   }

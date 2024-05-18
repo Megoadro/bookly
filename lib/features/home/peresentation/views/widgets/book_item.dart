@@ -1,10 +1,9 @@
-import 'package:bookly/core/utils/assets_app.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BookItem extends StatelessWidget {
-  const BookItem({super.key});
-
+  const BookItem({super.key, required this.imageUrl});
+    final String imageUrl;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,10 +16,10 @@ class BookItem extends StatelessWidget {
             height: 200,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
-              image: const DecorationImage(
+              image:  DecorationImage(
                 fit: BoxFit.fill,
-                image: AssetImage(
-                  AssetsData.testImage,
+                image: NetworkImage(
+                  imageUrl ,
                 ),
               ),
             ),

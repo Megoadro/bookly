@@ -6,8 +6,8 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 
 class HomeRepoImpls implements HomeRepo {
-  ApiService apiService;
-  HomeRepoImpls(this.apiService);
+  final ApiService apiService;
+  const HomeRepoImpls(this.apiService);
   @override
   Future<Either<Failuer, List<BookModel>>> fetchNewestData() async {
     try {
@@ -34,7 +34,7 @@ class HomeRepoImpls implements HomeRepo {
           endPoint:
               'volumes?Filtering=free-ebooks&q=subject:programming');
       List<BookModel> books = [];
-      for (var item in data['item']) {
+      for (var item in data['items']) {
         books.add(BookModel.fromJson(item));
       }
       return right(books);
