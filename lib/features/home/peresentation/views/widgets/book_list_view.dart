@@ -1,3 +1,4 @@
+import 'package:bookly/core/utils/router.dart';
 import 'package:bookly/core/widgets/custom_error_messege.dart';
 import 'package:bookly/core/widgets/custom_indecator.dart';
 import 'package:bookly/features/home/peresentation/manager/book_item_cubit/book_item_cubit.dart';
@@ -5,6 +6,7 @@ import 'package:bookly/features/home/peresentation/manager/book_item_cubit/book_
 import 'package:bookly/features/home/peresentation/views/widgets/book_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class BookListView extends StatelessWidget {
   const BookListView({super.key});
@@ -21,7 +23,18 @@ class BookListView extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 itemCount: state.books.length,
                 itemBuilder: (context, index) {
-                  return  BookItem(imageUrl: state.books[index].volumeInfo.imageLinks?.thumbnail ?? '',);
+                  return GestureDetector(
+                      onTap: () {
+                        GoRouter.of(context).push(
+                          AppRouters.kBookDetailsView,
+                          extra: state.books[index],
+                        );
+                      },
+                      child: BookItem(
+                        imageUrl: state.books[index].volumeInfo.imageLinks
+                                ?.thumbnail ??
+                            '',
+                      ));
                 }),
           );
         } else if (state is BookItemFailureState) {
