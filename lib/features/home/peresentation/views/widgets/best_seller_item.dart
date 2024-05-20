@@ -20,7 +20,10 @@ class BestSellerItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouters.kBookDetailsView);
+        GoRouter.of(context).push(
+          AppRouters.kBookDetailsView,
+          extra: bookModel,
+        );
       },
       child: SizedBox(
         height: 125,
@@ -39,28 +42,26 @@ class BestSellerItem extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     BestSellerDesc(
-                      
                       title: bookModel.volumeInfo.title!,
                       authName: bookModel.volumeInfo.authors![0],
-                    
                     ),
                     Row(
                       // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      
-                            children: [
-                Text(
-                  'Free',
-                  style:
-                      Styles.textStyle118.copyWith(fontWeight: FontWeight.bold),
-                ),
-               const Spacer(),
-                          //  const SizedBox(width: 70,),
-                 BookRating(
-                  count: bookModel.volumeInfo.ratingsCount?? 0,
-                  rate: bookModel.volumeInfo.averageRating ?? 0,
-                ),
-                            ],
-                          ),
+
+                      children: [
+                        Text(
+                          'Free',
+                          style: Styles.textStyle118
+                              .copyWith(fontWeight: FontWeight.bold),
+                        ),
+                        const Spacer(),
+                        //  const SizedBox(width: 70,),
+                        BookRating(
+                          count: bookModel.volumeInfo.ratingsCount ?? 0,
+                          rate: bookModel.volumeInfo.averageRating ?? 0,
+                        ),
+                      ],
+                    ),
                   ],
                 ),
               ),
