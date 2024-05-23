@@ -1,8 +1,9 @@
+import 'package:bookly/core/utils/functions/get_text.dart';
+import 'package:bookly/core/utils/functions/url_luncher.dart';
 import 'package:bookly/core/widgets/text_button.dart';
 import 'package:bookly/features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class BookPriceCheck extends StatelessWidget {
   const BookPriceCheck({super.key, required this.bookModel});
@@ -15,7 +16,7 @@ class BookPriceCheck extends StatelessWidget {
         children: [
           const Expanded(
             child: BookTextButton(
-              text: ' 199 L.E',
+              text: ' Free',
               textColor: Colors.black,
               backgroundColor: Colors.white,
               textSize: 18,
@@ -28,12 +29,9 @@ class BookPriceCheck extends StatelessWidget {
           Expanded(
             child: BookTextButton(
               onPressed: () async {
-                Uri uri = Uri.parse(bookModel.volumeInfo.previewLink!);
-                if (!await canLaunchUrl(uri)) {
-                  await launchUrl(uri);
-                }
+                urlCustomLanch(context, bookModel.volumeInfo.previewLink);
               },
-              text: 'Free preview',
+              text: getText(bookModel),
               textColor: Colors.white,
               backgroundColor: Colors.orange,
               textSize: 18,
@@ -48,3 +46,4 @@ class BookPriceCheck extends StatelessWidget {
     );
   }
 }
+  
